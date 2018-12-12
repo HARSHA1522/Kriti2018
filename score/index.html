@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Points Table | Kriti 2018</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+    </head>
+    <body>
+        <header id="header" class="alt" style="background-image: url(../images/pointstable.jpg);">
+            <div class="inner">
+                <h1>Points Table</h1>
+                <!-- <p>This Module is needed to brainstorm and pull the ideas together quickly. While most of brainstorming Events aren't new, more frequent and disciplined use of them can greatly enhance the possibilities to win.</p> -->
+            </div>
+        </header>
+        <div id="wrapper">
+                <section id="intro" class="main">
+                    <p>These are the present scores of Hostels in KRITI 2018</p>
+                </section>
+                <section class="main">
+                    <table id="points-table" style="display:none">
+                        <thead>
+                            <td>Position</td>
+                            <td>Hostel</td>
+                            <td>Points</td>
+                        </thead>
+                        <tr>
+                            <td class="position-cell">1</td>
+                            <td class="hostel-cell">Barak</td>
+                            <td class="points-cell">1310</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">2</td>
+                            <td class="hostel-cell">Bramhaputra</td>
+                            <td class="points-cell">615</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">3</td>
+                            <td class="hostel-cell">Dhansiri</td>
+                            <td class="points-cell">165</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">4</td>
+                            <td class="hostel-cell">Dibang</td>
+                            <td class="points-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">5</td>
+                            <td class="hostel-cell">Dihing</td>
+                            <td class="points-cell">712.5</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">6</td>
+                            <td class="hostel-cell">Kameng</td>
+                            <td class="points-cell">1078</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">7</td>
+                            <td class="hostel-cell">Kapili</td>
+                            <td class="points-cell">1543</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">8</td>
+                            <td class="hostel-cell">Lohit</td>
+                            <td class="points-cell">1122.5</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">9</td>
+                            <td class="hostel-cell">Manas</td>
+                            <td class="points-cell">1132</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">10</td>
+                            <td class="hostel-cell">Married Scholars</td>
+                            <td class="points-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">11</td>
+                            <td class="hostel-cell">Siang</td>
+                            <td class="points-cell">1208.5</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">12</td>
+                            <td class="hostel-cell">Subansiri</td>
+                            <td class="points-cell">67.5</td>
+                        </tr>
+                        <tr>
+                            <td class="position-cell">13</td>
+                            <td class="hostel-cell">Umiam</td>
+                            <td class="points-cell">1547.5</td>
+                        </tr>
+                    </table>
+                </section>
+                <section id="cta" class="main special">
+                    <ul class="actions">
+                        <li><a href="https://docs.google.com/spreadsheets/d/1eXPj6juehHQcyEriHV_9JNN8lDtrCPPkvTk5TBS_t-o/edit?usp=sharing" class="button big">Detailed Points Table</a></li>
+                    </ul>
+
+                    <h2>Details</h2>
+                    <p><b>"Competition makes us Faster. Collaboration makes us Better."</b></p>
+                    <ul class="actions">
+                        <li><a href="../schedule/index.html" class="button big">Schedule</a></li>
+                        <!-- <li><a href="../score/index.html" class="button big">Points Table</a></li> -->
+                        <li><a href="../team/index.html" class="button big">Team</a></li>
+                        <li><a href="../index.html" class="button big">Home</a></li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <ul class="icons">
+                            <li><a href="tel:9954250532" class="icon fa-phone"><span class="label">Phone</span></a></li>
+                            <li><a href="https://www.facebook.com/techboard.iitg/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                            <li><a href="mail:techsec@iitg.ac.in" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                        </ul>
+                        <p class="copyright">&copy; Tech Board, IIT Guwahati.</p>
+                    </footer>
+    
+            </div>
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/skel.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+            <script>
+                $(document).ready(function(){
+                    var hostels = $(".hostel-cell");
+                    var points = $(".points-cell");
+                    var positions = $(".position-cell");
+                    var max = -1;
+                    var max_i = 0;
+                    var temphostel;
+                    var temppoints;
+                    points.map(function(){
+                        console.log(this.innerHTML);
+                    });
+                    for (var i=0; i<12; i++){
+                        max = parseInt(points[i].innerHTML);
+                        max_i = i;
+                        for (var j=i+1; j<13; j++){
+                            if (max < parseInt(points[j].innerHTML)){
+                                max = parseInt(points[j].innerHTML);
+                                max_i = j;
+                            }
+                        }
+                        console
+                        temphostel = hostels[i].innerHTML;
+                        temppoints = points[i].innerHTML;
+                        hostels[i].innerHTML=hostels[max_i].innerHTML;
+                        points[i].innerHTML=points[max_i].innerHTML;
+                        hostels[max_i].innerHTML=temphostel;
+                        points[max_i].innerHTML=temppoints;
+                        if (i!=0){
+                            if (parseInt(points[i].innerHTML)==parseInt(points[i-1].innerHTML)){
+                                positions[i].innerHTML = positions[i-1].innerHTML;
+                            }
+                        }
+                    }
+                    $("#points-table").show();
+                });
+            </script>
+        </div>
